@@ -1,5 +1,5 @@
 const express = require('express');
-const Comment = require('../models/Comment');
+const Comment = require('../model/comment');
 const router = express.Router();
 const auth = require('../middleware/auth');
 
