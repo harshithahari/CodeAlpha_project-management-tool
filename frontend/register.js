@@ -5,7 +5,7 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
         const password = document.getElementById("password").value;
 
         const res = await axios.post(
-            "https://codealpha-project-management-tool-1.onrender.com/api/auth/register",
+            "http://localhost:5000/api/auth/register",
             { email, password }
         );
 

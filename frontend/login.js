@@ -7,7 +7,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
 
         // FIXED: Changed from localhost to your absolute live Render backend URL
         const res = await axios.post(
-            "https://codealpha-project-management-tool-1.onrender.com/api/auth/login",
+           "http://localhost:5000/api/auth/login" ,
             {
                 email,
                 password
