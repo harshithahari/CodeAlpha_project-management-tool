@@ -5,8 +5,9 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
 
+        // FIXED: Changed from localhost to your absolute live Render backend URL
         const res = await axios.post(
-            "http://localhost:5000/api/auth/login",
+            "https://codealpha-project-management-tool-1.onrender.com/api/auth/login",
             {
                 email,
                 password
@@ -20,7 +21,12 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
         window.location.href = "index.html";
 
     } catch (err) {
-    console.log(err.response.data);
-    alert(err.response.data.message || err.response.data.error);
-}
+        // FIXED: Added a fallback check in case the server is down or network fails completely
+        console.error(err);
+        if (err.response && err.response.data) {
+            alert(err.response.data.message || err.response.data.error);
+        } else {
+            alert("Something went wrong. Please try again later.");
+        }
+    }
 });
