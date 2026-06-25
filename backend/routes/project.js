@@ -1,5 +1,5 @@
 const express = require('express');
-const Project = require('../models/Project');
+const Project = require('../model/project');
 const router = express.Router();
 const auth = require('../middleware/auth'); // ✅ import middleware
 
